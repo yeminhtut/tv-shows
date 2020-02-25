@@ -24,6 +24,23 @@ export const getTvShowListEpic = action$ =>
         )
     )
 
+export const searchTvShowsEpic = action$ =>
+    action$.pipe(
+        ofType(actionTypes.CHANNEL.TVSHOW_SEARCH_REQUEST),
+        switchMap(action =>
+            from(Api.searchShow(action.payload)).pipe(
+                map(data => {
+                  return actions.CHANNEL.TVSHOW_SEARCH_RESPONSE(null, {
+                      list: _map(data.list, data => transformApiToState('list')(data))
+                  })
+                }
+
+                ),
+                catchError(err => of(actions.CHANNEL.TVSHOW_SEARCH_RESPONSE(err, {})))
+            )
+        )
+    )
+
 export const getChannelEpic = action$ => {
     return action$.pipe(
         ofType(actionTypes.CHANNEL.TVSHOW_GET_REQUEST),

@@ -16,7 +16,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getChannels: options => dispatch(actions.CHANNEL.TVSHOW_GET_ALL_REQUEST(options))
+    getChannels: options => dispatch(actions.CHANNEL.TVSHOW_GET_ALL_REQUEST(options)),
+    searchChannels: options => dispatch(actions.CHANNEL.TVSHOW_SEARCH_REQUEST(options))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelListContainer)

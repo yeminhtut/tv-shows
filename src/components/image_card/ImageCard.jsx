@@ -1,18 +1,18 @@
 import React from 'react'
 import { string } from 'prop-types'
-import cx from 'classnames'
 
 const ImageCard = props => {
+  const renderPoster = poster => {
+    const imagePath = poster ? `https://image.tmdb.org/t/p/w400/${poster}` : `https://via.placeholder.com/300/000000?text=No%20Image`
+    return (
+      <img alt='' src={imagePath} />
+    )
+  }
   return (
     <div
-      className={cx(
-          {
-              'image-card': true,
-              'image-card__transparent': props.src,
-          }
-      )}
+      className='image-card'
       >
-      {props.src && (<img src={`https://image.tmdb.org/t/p/w300/${props.src}`} />)}
+      {renderPoster(props.src)}
     </div>
   )
 }

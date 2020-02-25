@@ -54,6 +54,22 @@ function tvshowReducer(state = defaultState, action) {
                 error: action.error
             }
 
+          case actionTypes.CHANNEL.TVSHOW_SEARCH_REQUEST:
+              return {
+                  ...state,
+                  isLoadingGetAllShow: true,
+                  error: null
+              }
+
+          case actionTypes.CHANNEL.TVSHOW_SEARCH_RESPONSE:
+              return {
+                  ...state,
+                  isLoadingGetAllShow: false,
+                  error: action.error,
+                  channelList: action.payload.list,
+                  totalCount: action.payload.totalCount
+              }
+
         default:
             return handleGeneratedApiActions(state, action, 'CHANNEL')
     }

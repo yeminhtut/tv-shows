@@ -29,10 +29,11 @@ export const getSeason = params => {
     })
 }
 
-export const searchShow = () => {
-    return get(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=viking&page=1`).then(
-        res => {
-            return res.data
-        }
+export const searchShow = options => {
+    const params = {page: 1, ...options }
+    return get(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}`, { params }).then(
+        res => ({
+          list: res.data.results
+        })
     )
 }
