@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "jest"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/warnings",
+        "plugin:jest/recommended",
+        "prettier"
+    ],
+    "rules": {
+        "jsx-quotes": ["warn", "prefer-single"],
+        "no-console": "error",
+        "no-unused-vars": "error",
+        "react/display-name": "error",
+
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-useless-escape": "error",
+        "eqeqeq": "error",
+        "no-eval": "error",
+        "radix": "error",
+        "no-bitwise": "error",
+        "no-nested-ternary": "error",
+        "no-var": "error",
+        "react/sort-comp": "error",
+        "react/sort-prop-types": "error",
+        "react/jsx-sort-props": "error"
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {
+        "firebase": false
+    },
+    "settings": {
+        "react": {
+            "version": "16.8.6"
+        }
+    }
+}

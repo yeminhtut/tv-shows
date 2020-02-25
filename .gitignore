@@ -1,0 +1,8 @@
+chunk-analysis-report.html
+coverage
+dist
+node_modules
+npm-debug.log
+stats.json
+.idea
+.DS_Store

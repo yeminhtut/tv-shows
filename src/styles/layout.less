@@ -1,0 +1,37 @@
+@import './customized_antd';
+@import './color';
+@import './mixin';
+@import '../pages/pages';
+@import '../components/components';
+@import '../modules/channelManager/channel';
+
+.root {
+    height: 100%;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__main {
+        margin-top: 64px;
+    }
+}
+
+// common classes
+.checkbox-align-center {
+    margin-top: 45px;
+}
+.button-align-center {
+    margin-top: 43px;
+}
+.pagination-sticky {
+    margin-bottom: 8px;
+    position: sticky;
+    top: 64px;
+    z-index: 1;
+    background: @ant-gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,24 @@
+.layout-header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 0px 12px;
+    border-bottom: 1px solid fade(@primary-color, 10%);
+    background: white;
+
+    &__container,
+    &__brand {
+        height: 100%;
+    }
+    &__brand {
+        &-image {
+            max-width: 120px;
+            max-height: 40px;
+            margin-top: 12px;
+        }
+    }
+
+    .ant-menu-horizontal {
+        border: none;
+    }
+}
