@@ -10,11 +10,6 @@ export const errorMessageBlacklist = []
 // return custom error message
 export const errorMessageRules = [
     err => {
-        if (err.status === 400 && get(err, 'data.errors.0.code', '') === 'GracePeriodHasntElapsed') {
-            return 'Grace Period Has Not Elapsed'
-        }
-    },
-    err => {
         if (err.status === 400 && get(err, 'data.errors.0.code', '') === 'RequiredFieldMissing') {
             return get(err, 'data.errors.0.message', '')
         }
