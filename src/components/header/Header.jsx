@@ -9,7 +9,7 @@ const Header = () => (
     <AntdHeader className='layout-header'>
         <Row align='middle' className='layout-header__container' type='flex'>
             <Col className='layout-header__brand' span={4}>
-                <Link to='/'>
+                <Link className='layout-header__logo' to='/'>
                     <BrandImage />
                 </Link>
             </Col>

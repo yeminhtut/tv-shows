@@ -20,7 +20,7 @@ const ChannelList = props => {
     const handlePaginationChange = currentPage => setPage(currentPage)
     return (
         <div className='show-list'>
-            <Row className='channel-list' gutter={[16, 16]}>
+            <Row gutter={[16, 16]}>
                 {map(channels, channel => (
                     <Col key={channel.id} lg={6} sm={8} xs={24}>
                         <Link to={`/tv-shows/${channel.id}`}>

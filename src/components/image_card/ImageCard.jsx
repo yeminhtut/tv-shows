@@ -1,10 +1,17 @@
 import React from 'react'
-import { node } from 'prop-types'
+import { string } from 'prop-types'
 
-const ImageCard = props => <div className='image-card'>{props.cover}</div>
+const ImageCard = props => {
+  return (
+    <div className='image-card'>
+      {props.src && (<img src={`https://image.tmdb.org/t/p/w300/${props.src}`} />)}
+    </div>
+  )
+}
+
 
 ImageCard.propTypes = {
-    cover: node
+    src: string
 }
 
 export default ImageCard
